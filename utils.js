@@ -47,7 +47,7 @@ var ProjectContainer = new function () {
 	// })
 	this._projectList = {
 	"RSS newspaper": {
-		images: ["images/projects/rn.png"],
+		images: ["images/projects/rn.jpg"],
 		description: {
 			about: "simple RSS aggregator",
 			state: "business analysis, site markup",
@@ -61,10 +61,10 @@ var ProjectContainer = new function () {
 		}
 	},
 	"Project Status": {
-		images: ["images/projects/piratus1.png",
-			     "images/projects/piratus2.png",
-			     "images/projects/piratus3.png",
-			     "images/projects/piratus4.png"],
+		images: ["images/projects/piratus1.jpg",
+			     "images/projects/piratus2.jpg",
+			     "images/projects/piratus3.jpg",
+			     "images/projects/piratus4.jpg"],
 		description: {
 			about: "agregator of donation",
 			state: "development partially frozen",
@@ -75,8 +75,8 @@ var ProjectContainer = new function () {
 		}
 	},
 	"FunWander": {
-		images: ["images/projects/fw2.png",
-				 "images/projects/fw1.png"],
+		images: ["images/projects/fw2.jpg",
+				 "images/projects/fw1.jpg"],
 		description: {
 			about: "android application, diploma work",
 			state: "development partially frozen",
@@ -84,10 +84,10 @@ var ProjectContainer = new function () {
 		}
 	},
 	"Copia": {
-		images: ["images/projects/copia1.png",
-				 "images/projects/copia2.png",
-				 "images/projects/copia3.png",
-				 "images/projects/copia4.png"],
+		images: ["images/projects/copia1.jpg",
+				 "images/projects/copia2.jpg",
+				 "images/projects/copia3.jpg",
+				 "images/projects/copia4.jpg"],
 		description: {
 			about: "file storage service with web UI",
 			state: "maintaining, development closed",
@@ -98,8 +98,8 @@ var ProjectContainer = new function () {
 		}
 	},
 	"Resroran Menu app": {
-		images: ["images/projects/restoran1.png",
-				 "images/projects/restoran2.png",],
+		images: ["images/projects/restoran1.jpg",
+				 "images/projects/restoran2.jpg",],
 		description: {
 			about: "restoran menu application",
 			state: "markup done, closed",
