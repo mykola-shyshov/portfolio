@@ -1,0 +1,106 @@
+/* Reset rules */
+html, 
+body {
+	font: 15px Arial, Helvetica, sans-serif;
+}
+body, html{ height: 100%; }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+a {
+	outline: none;
+}
+/* Page rules */
+header {
+	border-bottom: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.tpanel {
+	height: 3.2em;
+	width: 980px;
+	margin: 0 auto;	
+	text-align: center;
+}
+	.tpanel-author{
+		font-size: 1.4em;
+		position: absolute;
+		top: 10px;
+	}
+.projects-navigator {
+	display: inline-block;
+	margin-top: 10px;
+}
+	.projects-navigator a {
+		margin: 0 10px;
+		color: black;
+	}
+	.projects-navigator a:hover {
+		text-decoration: none;
+	}
+
+	a.projects-navigator-selector {
+		font-size: 1.4em;
+	}
+
+.project {
+	width: 980px;
+	margin: 20px auto 0 auto;
+}
+	.project-description {
+		height: 20px;
+		text-align: right;
+	}
+		.project-description .about{
+			float: left;
+		}
+		.project-description .state,
+		.project-description .links {
+			float: right;
+		}
+		.project-description .links {
+			margin-left: 20px;
+		}
+		.project-description a{
+			color: #6D221F;
+			margin: 0 2px;
+		}
+		.project-description a:hover{
+			text-decoration: none;
+		}
+
+	.project .image-slider {
+		margin-top: 10px;
+		position: relative;
+		overflow: hidden;
+		width: 980px;
+		height: 500px;
+	}
+	.project .image-slider li{
+		list-style: none;
+	}
+	.project .image-slider-prev,
+	.project .image-slider-next {
+		opacity: 0.2;
+		width: 100px;
+		height: 50px;
+		cursor: pointer;
+		margin-top: -25px;
+	}
+	.project .image-slider-prev:hover,
+	.project .image-slider-next:hover {
+		opacity: 0.5;
+	}
+	.project .image-slider-prev {
+		background: #000 url(images/right_pointer.png) no-repeat 60px 5px;
+		position: absolute;
+		top: 50%;
+	}
+	.project .image-slider-next {
+		background: #000 url(images/left_pointer.png) no-repeat 15px 5px;
+		position: absolute;
+		top: 50%;
+		right:0;
+	}

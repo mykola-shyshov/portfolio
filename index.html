@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="utils.js"></script>
+		<script type="text/javascript" src="widgets.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				new ProjectNavigator($(".projects-navigator"));
+				new ProjectDescription($(".project-description"));
+				new ImageSlider($(".image-slider"));
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="tpanel">
+				<div class="tpanel-author">Nick Shishov</div>
+				<div class="projects-navigator">
+					<a href="" class="projects-navigator-prev">prev</a>
+					<a href="" class="projects-navigator-selector">RSS newspaper</a>
+					<a href="" class="projects-navigator-next">next</a>
+				</div>
+			</div>
+		</header>
+		<div class="project">
+			<div class="project-description">
+				<span class="about"></span>
+				<span class="links"></span>
+				<span class="state"></span>
+			</div>
+			<div class="image-slider">
+				<div class="image-slider-prev"></div>
+				<div class="image-slider-next"></div>
+			</div>
+		</div>
+	</body>
+</html>

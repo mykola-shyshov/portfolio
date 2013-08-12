@@ -1,0 +1,62 @@
+{
+	"RSS newspaper": {
+		images: ["images/projects/rn.png"],
+		description: {
+			about: "simple RSS aggregator",
+			state: "business analysis, site markup",
+			links: [{
+				url: "https://github.com/ecentric/rssNewspaper",
+				text: "github"
+			}, {
+				url: "http://rss.copia.org.ua",
+				text: "demo"
+			}]
+		}
+	},
+	"Project Status": {
+		images: ["images/projects/piratus1.png",
+			     "images/projects/piratus2.png",
+			     "images/projects/piratus3.png",
+			     "images/projects/piratus4.png"],
+		description: {
+			about: "agregator of donation",
+			state: "development partially frozen",
+			links: [{
+				url: "http://gang.org.ua",
+				text: "demo"
+			}]
+		}
+	},
+	"FunWander": {
+		images: ["images/projects/fw2.png",
+				 "images/projects/fw1.png"],
+		description: {
+			about: "android application, diploma work",
+			state: "development partially frozen",
+			links: []
+		}
+	},
+	"Copia": {
+		images: ["images/projects/copia1.png",
+				 "images/projects/copia2.png",
+				 "images/projects/copia3.png",
+				 "images/projects/copia4.png"],
+		description: {
+			about: "file storage service with web UI",
+			state: "maintaining, development closed",
+			links: [{
+				url: "http://copia.org.ua",
+				text: "site"
+			}]
+		}
+	},
+	"Resroran Menu app": {
+		images: ["images/projects/restoran1.png",
+				 "images/projects/restoran2.png",],
+		description: {
+			about: "restoran menu application",
+			state: "markup done, closed",
+			links: []
+		}
+	}
+};
