@@ -36,78 +36,16 @@ $.extend({
 var ProjectContainer = new function () {
 	var self = this;
 
-	// $.ajax({
-	//     url: 'images/projects/descriptor.json',             // указываем URL и
-	//     dataType : "text",                     // тип загружаемых данных
-	//     success: function (data, textStatus) { // вешаем свой обработчик на функцию success
-	//         $.each(data, function(i, val) {    // обрабатываем полученные данные
-	//             alert(data);
-	//         });
-	//     } 
-	// })
-	this._projectList = {
-	"RSS newspaper": {
-		images: ["images/projects/rn.jpg"],
-		description: {
-			about: "simple RSS aggregator",
-			state: "business analysis, site markup",
-			links: [{
-				url: "https://github.com/ecentric/rssNewspaper",
-				text: "github"
-			}, {
-				url: "http://rss.copia.org.ua",
-				text: "demo"
-			}]
+	$.ajax({
+		url : "http://portfolio.copia.org.ua/images/projects/descriptor.json",
+		async : false,
+		dataType: "JSON",
+		type: "GET",
+		success: function(data, textStatus) {
+			self._projectList = data;
 		}
-	},
-	"Project Status": {
-		images: ["images/projects/piratus1.jpg",
-			     "images/projects/piratus2.jpg",
-			     "images/projects/piratus3.jpg",
-			     "images/projects/piratus4.jpg"],
-		description: {
-			about: "agregator of donation",
-			state: "development partially frozen",
-			links: [{
-				url: "http://gang.org.ua",
-				text: "demo"
-			}]
-		}
-	},
-	"FunWander": {
-		images: ["images/projects/fw2.jpg",
-				 "images/projects/fw1.jpg"],
-		description: {
-			about: "android application, diploma work",
-			state: "development partially frozen",
-			links: []
-		}
-	},
-	"Copia": {
-		images: ["images/projects/copia1.jpg",
-				 "images/projects/copia2.jpg",
-				 "images/projects/copia3.jpg",
-				 "images/projects/copia4.jpg"],
-		description: {
-			about: "file storage service with web UI",
-			state: "maintaining, development closed",
-			links: [{
-				url: "http://copia.org.ua",
-				text: "site"
-			}]
-		}
-	},
-	"Resroran Menu app": {
-		images: ["images/projects/restoran1.jpg",
-				 "images/projects/restoran2.jpg",],
-		description: {
-			about: "restoran menu application",
-			state: "markup done, closed",
-			links: []
-		}
-	}
-};
-
+	});
+	// this._projectList = {};
 	this._projectNames = $.keys(this._projectList);
 	this._image2ProjectIndexes = makeImage2ProjectIndexes();
 	this._images = makeImagesList();
