@@ -120,11 +120,13 @@ function ImageSlider(elem) {
 
 	function onNextClick(event) {
 		changeImage(imageIndex + 1);
+		cacheImage(imageIndex + 2);
 		return false;
 	}
 
 	function onPrevClick(event) {
 		changeImage(imageIndex - 1);
+		cacheImage(imageIndex - 2);
 		return false;
 	}
 
@@ -141,5 +143,11 @@ function ImageSlider(elem) {
 		if (pr == projectName) return;
 		projectName = pr;
 		changeImage(ProjectContainer.getImageId(projectName));
+	}
+
+	function cacheImage(imageIndex) {
+		if (imageIndex < 0) imageIndex = images.length - 1;
+		if (imageIndex > images.length - 1) imageIndex = 0;
+		ImagesCache.add(images[imageIndex]);
 	}
 }

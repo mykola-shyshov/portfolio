@@ -188,8 +188,11 @@ var ProjectContainer = new function () {
 		return imageIndex;
 	};
 
-	
 
+	/**
+	 * Parse object-container for projects and make list of image urls
+	 * @return {Array} 
+	 */
 	function makeImagesList() {
 		var images = [];
 		var imagesCount = 0;
@@ -201,6 +204,10 @@ var ProjectContainer = new function () {
 		}
 		return images;
 	}
+	/**
+	 * @return {Array} index of array is a image index, 
+	 *                       value is project index that accord image key-index
+	 */
 	function makeImage2ProjectIndexes() {	
 		imageProjectIndexes = [];
 		for (var i=0; i<self._projectNames.length; i++) {
@@ -215,3 +222,18 @@ var ProjectContainer = new function () {
 		return imageProjectIndexes;
 	};
 };
+
+/**
+ * 
+ * @return {[type]} [description]
+ */
+var ImagesCache = new function() {
+	var cached = {};
+	this.add = function (url) {
+		if (!(url in cached)) {
+			var img = document.createElement("img");
+			img.src = url;	
+			cached[url] = true;
+		}
+	}
+}
