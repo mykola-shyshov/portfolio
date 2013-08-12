@@ -142,7 +142,10 @@ function ImageSlider(elem) {
 	function changeProgect(pr) {
 		if (pr == projectName) return;
 		projectName = pr;
-		changeImage(ProjectContainer.getImageId(projectName));
+		var imIndex = ProjectContainer.getImageIndex(projectName);
+		cacheImage(imIndex - 1);
+		cacheImage(imIndex + 1);
+		changeImage(imIndex);
 	}
 
 	function cacheImage(imageIndex) {

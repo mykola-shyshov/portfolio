@@ -176,7 +176,7 @@ var ProjectContainer = new function () {
 	 * @param  {String} projectName 
 	 * @return {number} 
 	 */
-	this.getImageId = function(projectName) {
+	this.getImageIndex = function(projectName) {
 		var id = self.getProjectIndex(projectName);
 		var imageIndex;
 		$.each(self._image2ProjectIndexes, function(imId, prId) {
