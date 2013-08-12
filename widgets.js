@@ -50,8 +50,12 @@ function ProjectNavigator(elem) {
 		if (index > ProjectContainer.count() - 1) index = 0;
 		projectIndex = index;
 		var projectName = ProjectContainer.getProjectName({projectIndex:index})
-		projectSelector.text(projectName);
+		
 		$(document).triggerHandler("project-changed", projectName);
+		elem.fadeOut(200, "linear", function(){
+			projectSelector.text(projectName);	
+			elem.fadeIn(200);
+		});
 	}
 }
 
@@ -66,7 +70,10 @@ function ProjectDescription(elem) {
 
 	function onProjectChanged(event, projectName) {
 		selectedProject = ProjectContainer.getProject(projectName);
-		changeProgect();
+		elem.fadeOut(200, "linear", function(){
+			changeProgect();	
+			elem.fadeIn(200);
+		}) 
 	}
 
 	function changeProgect() {
@@ -102,7 +109,7 @@ function ImageSlider(elem) {
 
 	var nextButton = $(".image-slider-next");
 	var prevButton = $(".image-slider-prev");
-	var imageIndex, images, imageElem;
+	var imageIndex, images, imageElem, latchImageElem;
 	var projectName;
 
 	$(document).on("project-changed", onProjectChanged);
@@ -110,7 +117,10 @@ function ImageSlider(elem) {
 	prevButton.on("click", onPrevClick);
 
 	(function init() {
-		imageElem = $("<img src=\"\" />").appendTo(elem);
+		latchImageElem = $("<img />").css("position", "absolute")
+			.hide()
+			.appendTo(elem);
+		imageElem = $("<img />").appendTo(elem);
 		images = ProjectContainer.getImages();
 	})();
 
@@ -119,20 +129,45 @@ function ImageSlider(elem) {
 	}
 
 	function onNextClick(event) {
-		changeImage(imageIndex + 1);
+		animateLatch("left", imageIndex + 1);
 		cacheImage(imageIndex + 2);
 		return false;
 	}
 
 	function onPrevClick(event) {
-		changeImage(imageIndex - 1);
+		animateLatch("right", imageIndex - 1);
 		cacheImage(imageIndex - 2);
 		return false;
+	}
+
+	function animateLatch(direction, index) {
+		if (index < 0) index = images.length - 1;
+		if (index > images.length - 1) index = 0;
+
+		imageIndex = index;
+
+		if (direction == "left") {
+			latchLeft = imageElem.position().left + imageElem.width();
+		} else {
+			latchLeft = imageElem.position().left - imageElem.width();
+		}
+		latchImageElem.attr("src", images[imageIndex]);
+		latchImageElem.show();
+		latchImageElem.css("left", latchLeft);
+		
+		latchImageElem.animate({
+			left: imageElem.position().left
+		}, 150, "linear", function () {
+			
+			changeImage(imageIndex);
+			latchImageElem.hide();
+		});
 	}
 
 	function changeImage(index) {
 		if (index < 0) index = images.length - 1;
 		if (index > images.length - 1) index = 0;
+
 		imageIndex = index;
 		imageElem.attr("src", images[imageIndex]);
 		projectName = ProjectContainer.getProjectName({imageIndex:imageIndex});
@@ -145,7 +180,8 @@ function ImageSlider(elem) {
 		var imIndex = ProjectContainer.getImageIndex(projectName);
 		cacheImage(imIndex - 1);
 		cacheImage(imIndex + 1);
-		changeImage(imIndex);
+		
+		changeImage(imIndex);	
 	}
 
 	function cacheImage(imageIndex) {

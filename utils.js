@@ -37,7 +37,8 @@ var ProjectContainer = new function () {
 	var self = this;
 
 	$.ajax({
-		url : "http://portfolio.copia.org.ua/images/projects/descriptor.json",
+		//url : "http://portfolio.copia.org.ua/images/projects/descriptor.json",
+		url : "http://localhost:8080/images/projects/descriptor.json",
 		async : false,
 		dataType: "JSON",
 		type: "GET",
