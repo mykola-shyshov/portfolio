@@ -36,17 +36,16 @@ $.extend({
 var ProjectContainer = new function () {
 	var self = this;
 
-	$.ajax({
-		url : "http://portfolio.copia.org.ua/images/projects/descriptor.json",
-		// url : "http://localhost:8080/images/projects/descriptor.json",
-		async : false,
-		dataType: "JSON",
-		type: "GET",
-		success: function(data, textStatus) {
-			self._projectList = data;
-		}
-	});
-	// this._projectList = {};
+    $.ajax({
+        // url : "http://portfolio.copia.org.ua/images/projects/descriptor.json",
+        url : "http://localhost:3000/images/projects/descriptor.json",
+        async : false,
+        dataType: "JSON",
+        type: "GET",
+        success: function(data, textStatus) {
+             self._projectList = data;
+        }
+    });
 	this._projectNames = $.keys(this._projectList);
 	this._image2ProjectIndexes = makeImage2ProjectIndexes();
 	this._images = makeImagesList();

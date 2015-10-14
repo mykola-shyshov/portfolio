@@ -94,12 +94,12 @@ header {
 		opacity: 0.5;
 	}
 	.project .image-slider-prev {
-		background: #000 url(images/right_pointer.png) no-repeat 60px 5px;
+		background: #000 url(right_pointer.png) no-repeat 60px 5px;
 		position: absolute;
 		top: 50%;
 	}
 	.project .image-slider-next {
-		background: #000 url(images/left_pointer.png) no-repeat 15px 5px;
+		background: #000 url(left_pointer.png) no-repeat 15px 5px;
 		position: absolute;
 		top: 50%;
 		right:0;
